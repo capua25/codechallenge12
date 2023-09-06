@@ -10,11 +10,13 @@ function showAlertSuccess(mensaje) {
 }
 
 function showAlertError(mensaje) {
-    const negativo = document.getElementById("alert-success");
-    const respuesta = document.createElement('p');
-    respuesta.innerHTML = mensaje;
-    negativo.appendChild(respuesta);
-    document.getElementById("alert-danger").classList.add("show");
+    const negativo = document.getElementById("alert-danger");
+    if(mensaje!=''){
+        const respuesta = document.createElement('p');
+        respuesta.innerHTML = mensaje;
+        negativo.appendChild(respuesta);
+    }
+    negativo.classList.add("show");
 }
 
 async function envio(){
@@ -52,6 +54,6 @@ async function envio(){
 
     }
     else {
-        showAlertError();
+        showAlertError('');
     }
 }
