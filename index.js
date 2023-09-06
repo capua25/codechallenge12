@@ -6,7 +6,7 @@ function showAlertSuccess(mensaje) {
     respuesta.innerHTML = mensaje;
     positivo.appendChild(respuesta);
     positivo.classList.add("show");
-
+    setTimeout(()=>{positivo.classList.remove("show");}, 2000)
 }
 
 function showAlertError(mensaje) {
@@ -17,6 +17,7 @@ function showAlertError(mensaje) {
         negativo.appendChild(respuesta);
     }
     negativo.classList.add("show");
+    setTimeout(()=>{negativo.classList.remove("show");}, 2000)
 }
 
 async function envio(){
@@ -50,8 +51,6 @@ async function envio(){
         }catch(error){
             showAlertError(error);
         }
-
-
     }
     else {
         showAlertError('');
